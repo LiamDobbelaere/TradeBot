@@ -33,11 +33,8 @@ var stream = fs.createWriteStream("out.csv", {flags:'a'});
       }).then((w) => {
         items.push(w);
         console.log(items.join(','));
-        stream.write(items.join(',') + '\r\n');
+        stream.write(new Date().toISOString() + "," + items.join(',') + '\r\n');
       });
     });  
   }, 300);
-
-  setTimeout()
-
 })();
